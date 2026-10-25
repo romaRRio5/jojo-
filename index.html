@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JOJO — мужской барбершоп в Жулебино, Москва | Запись онлайн</title>
+<meta name="description" content="JOJO — мужской барбершоп в Жулебино: стрижки, моделирование бороды, королевское бритьё, уход за лицом. Жулебинский бульвар, 14. Рейтинг 5.0 на Яндекс Картах. Запись онлайн.">
+<meta name="theme-color" content="#0d0d0e">
+<meta property="og:title" content="JOJO — барбершоп в Жулебино">
+<meta property="og:description" content="Стрижки, борода, бритьё и уход за лицом. Жулебинский бульвар, 14. Запись онлайн.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="img/og.jpg">
+<link rel="icon" type="image/jpeg" href="img/logo.jpg">
+<link rel="apple-touch-icon" href="img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/in-1.jpg" media="(min-width: 701px)">
+<link rel="preload" as="image" href="img/in-4.jpg" media="(max-width: 700px)">
+<script>document.documentElement.classList.add("js")</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BarberShop","name":"JOJO","image":"img/og.jpg","telephone":"+79652299036",
+"address":{"@type":"PostalAddress","streetAddress":"Жулебинский бульвар, 14","addressLocality":"Москва","addressCountry":"RU"},
+"geo":{"@type":"GeoCoordinates","latitude":55.697348,"longitude":37.85159},
+"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"533"},
+"sameAs":["https://yandex.ru/maps/org/20964906501","https://telegram.me/jojo_barbers"]}
+</script>
+<style>
+:root{--bg:#0d0d0e;--bg2:#141416;--card:#1a1a1d;--card2:#202024;--line:#2a2a2e;--tx:#f2efe9;--mut:#a29f98;--ac:#e8742a;--ac2:#ff9150;--r:16px;
+ --hd:"Unbounded",system-ui,sans-serif;--bd:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--tx);font:16px/1.6 var(--bd);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ac2);outline-offset:3px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+section{padding:96px 0}
+.alt{background:var(--bg2)}
+h1,h2,h3{line-height:1.1;letter-spacing:-.01em}
+h2{font:900 clamp(28px,4.6vw,48px)/1.08 var(--hd);text-transform:uppercase;margin-bottom:14px}
+h3{font-weight:800}
+.eyebrow{color:var(--ac);font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:13px;margin-bottom:14px}
+.lead{color:var(--mut);max-width:62ch;margin-bottom:36px;font-size:17px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 26px;border-radius:999px;font-weight:800;border:1.5px solid var(--ac);background:var(--ac);color:#150b04;cursor:pointer;font-size:16px;font-family:inherit;transition:background .2s,border-color .2s,color .2s,transform .2s;white-space:nowrap}
+.btn:hover{background:var(--ac2);border-color:var(--ac2);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--tx);border-color:#55555b}
+.btn.ghost:hover{border-color:var(--ac);color:var(--ac2)}
+.btn.sm{min-height:42px;padding:0 18px;font-size:14px}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(13,13,14,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font:900 22px var(--hd);letter-spacing:.04em}
+.logo img{width:40px;height:40px;border-radius:10px;object-fit:cover}
+.logo b{color:var(--ac)}
+nav ul{display:flex;gap:26px;list-style:none;padding:0}
+nav a{color:var(--mut);font-weight:700;font-size:15px;transition:color .2s}
+nav a:hover,nav a.on{color:var(--tx)}
+.hr{display:flex;align-items:center;gap:16px}
+.tel{font-weight:800;white-space:nowrap}
+.tel:hover{color:var(--ac2)}
+.burger{display:none;width:46px;height:46px;background:none;border:1px solid var(--line);border-radius:12px;cursor:pointer;padding:0}
+.burger span{display:block;width:20px;height:2px;background:currentColor;margin:5px auto;transition:.25s}
+.menu-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){opacity:0}
+.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:flex-end;padding:130px 0 64px;position:relative;isolation:isolate;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(13,13,14,.45) 0%,rgba(13,13,14,.6) 40%,rgba(13,13,14,.97) 92%),linear-gradient(90deg,rgba(13,13,14,.7),transparent 70%)}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 10px;border-radius:999px;background:rgba(20,20,22,.7);border:1px solid var(--line);font-size:14px;font-weight:700;margin-bottom:22px;backdrop-filter:blur(6px)}
+.stars{color:#ffc53d;letter-spacing:2px}
+.hero h1{font:900 clamp(40px,8.6vw,112px)/1 var(--hd);text-transform:uppercase;margin-bottom:22px}
+.hero h1 em{font-style:normal;color:var(--ac)}
+.hero p.sub{max-width:54ch;color:#dedad3;font-size:clamp(16px,2vw,19px);margin-bottom:30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero .cta{margin-bottom:36px}
+.facts{display:flex;flex-wrap:wrap;gap:12px 32px;color:var(--mut);font-size:15px}
+.facts a{display:inline-flex;align-items:center;gap:8px}
+.facts a:hover{color:var(--ac2)}
+.facts svg{width:18px;height:18px;color:var(--ac)}
+.facts strong{color:var(--tx)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-block:1px solid var(--line)}
+.stat{background:var(--bg);padding:26px 20px;text-align:center}
+.stat b{display:block;font:900 clamp(24px,3.4vw,36px)/1.1 var(--hd);color:var(--ac);margin-bottom:6px}
+.stat span{color:var(--mut);font-size:14px}
+
+/* about */
+.about{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:10px 18px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-weight:700;font-size:15px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0}
+.feat div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.feat b{display:block;margin-bottom:4px}
+.feat span{color:var(--mut);font-size:14px}
+.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:14px}
+.collage img{width:100%;height:100%;object-fit:cover;border-radius:var(--r);cursor:zoom-in}
+.collage .big{grid-column:1/-1;aspect-ratio:4/3}
+.collage .sm{aspect-ratio:3/4}
+
+/* promos */
+.promos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.promo{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
+.promo:hover{transform:translateY(-4px);border-color:var(--ac)}
+.pimg{position:relative;aspect-ratio:4/3;background:#111;overflow:hidden}
+.pimg img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.pimg.contain{background:#fff}
+.pimg.contain img{object-fit:contain;object-position:center}
+.ptag{position:absolute;left:14px;top:14px;background:var(--ac);color:#150b04;font:900 15px var(--hd);padding:6px 12px;border-radius:999px}
+.pb{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.promo h3{font-size:20px}
+.promo p{color:var(--mut);font-size:15px;flex:1}
+.date{font-size:13px;color:var(--ac2);font-weight:700}
+
+/* services */
+.tools{display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
+.search{position:relative;max-width:420px}
+.search input{width:100%;min-height:50px;padding:0 18px 0 46px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--tx);font:inherit;font-size:16px}
+.search input:focus{border-color:var(--ac);outline:none}
+.search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--mut)}
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--mut);font-weight:700;font-size:15px;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:8px}
+.tab:hover{color:var(--tx);border-color:#444}
+.tab i{font-style:normal;font-size:12px;background:var(--card2);border-radius:999px;padding:1px 8px;color:var(--mut)}
+.tab[aria-pressed=true]{background:var(--ac);border-color:var(--ac);color:#150b04}
+.tab[aria-pressed=true] i{background:rgba(0,0,0,.18);color:#150b04}
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.s{display:grid;grid-template-columns:120px 1fr;gap:18px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;transition:border-color .2s,transform .2s;align-items:stretch}
+.s:hover{border-color:var(--ac);transform:translateY(-2px)}
+.s .th{width:120px;height:120px;border-radius:12px;overflow:hidden;background:#111;align-self:start}
+.s .th img{width:100%;height:100%;object-fit:cover}
+.s .bd{display:flex;flex-direction:column;gap:6px;min-width:0}
+.s small{color:var(--ac2);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.s h3{font-size:18px;line-height:1.25}
+.s p{color:var(--mut);font-size:14px;line-height:1.5}
+.s .row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;padding-top:8px}
+.price{font-size:22px;font-weight:800;color:var(--tx);white-space:nowrap}
+.price.q{font-size:15px;color:var(--ac2)}
+.note{color:var(--mut);font-size:13px;margin-top:22px}
+.empty{color:var(--mut);padding:24px 0}
+.more{display:flex;justify-content:center;margin-top:22px}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gal button{border:0;padding:0;background:#111;border-radius:14px;overflow:hidden;cursor:zoom-in;aspect-ratio:1;position:relative}
+.gal button img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gal button:hover img{transform:scale(1.06)}
+.gal .tall{grid-row:span 2;aspect-ratio:auto}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(5,5,6,.94);display:none;align-items:center;justify-content:center;padding:56px 16px}
+.lb.open{display:flex}
+.lb img{max-width:min(1100px,100%);max-height:100%;object-fit:contain;border-radius:10px}
+.lb button{position:absolute;background:rgba(30,30,33,.85);border:1px solid var(--line);color:#fff;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:22px;display:grid;place-items:center}
+.lb .x{top:14px;right:14px}
+.lb .pv{left:14px;top:50%;transform:translateY(-50%)}
+.lb .nx{right:14px;top:50%;transform:translateY(-50%)}
+.lb .cnt{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:var(--mut);font-size:14px}
+
+/* reviews */
+.score{display:flex;align-items:center;gap:18px;margin-bottom:30px;flex-wrap:wrap}
+.score b{font:900 64px/1 var(--hd);color:var(--ac)}
+.score div{color:var(--mut)}
+.score .stars{font-size:20px;display:block}
+.revs{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:14px}
+.rev p{font-size:15px;color:#d6d3cc;flex:1}
+.rev footer{display:flex;gap:12px;align-items:center;font-size:14px;font-weight:700}
+.av{width:40px;height:40px;border-radius:50%;background:var(--ac);color:#150b04;font-weight:900;display:grid;place-items:center;flex:none}
+.rev time{color:var(--mut);display:block;font-size:12px;font-weight:500}
+
+/* contacts */
+.ct{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;align-items:stretch}
+.ct dl{display:grid;gap:22px;margin-bottom:30px}
+.ct dt{color:var(--mut);font-size:13px;text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+.ct dd{font-size:20px;font-weight:700}
+.ct dd a:hover{color:var(--ac2)}
+.map{position:relative;border-radius:var(--r);border:1px solid var(--line);overflow:hidden;min-height:420px;background:var(--card)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:24px;color:var(--mut)}
+
+/* footer */
+footer.site{border-top:1px solid var(--line);padding:48px 0 40px;color:var(--mut);font-size:14px}
+.ft{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px}
+.ft ul{list-style:none;padding:0;display:grid;gap:8px}
+.ft a:hover{color:var(--ac2)}
+.legal{margin-top:28px;font-size:12px;line-height:1.7}
+.sticky{display:none}
+.totop{position:fixed;right:18px;bottom:18px;z-index:40;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:rgba(26,26,29,.9);color:var(--tx);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;display:grid;place-items:center}
+.totop.show{opacity:1;pointer-events:auto}
+.totop svg{width:20px;height:20px}
+
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.js .rv.in{opacity:1;transform:none}
+
+@media(max-width:1000px){
+ nav{position:fixed;inset:68px 0 auto;background:var(--bg);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .35s}
+ .menu-open nav{max-height:calc(100svh - 68px);overflow:auto}
+ nav ul{flex-direction:column;gap:0;padding:8px 16px 20px}
+ nav a{display:block;padding:15px 4px;font-size:18px;border-bottom:1px solid var(--line)}
+ .burger{display:block}
+ .hr .tel,.hr .btn{display:none}
+ .about,.ct{grid-template-columns:1fr}
+ .promos{grid-template-columns:1fr 1fr}
+ .svc{grid-template-columns:1fr}
+ .gal{grid-template-columns:repeat(3,1fr)}
+ .revs{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+ section{padding:64px 0}
+ .hero{padding:110px 0 40px}
+ .hero-bg{object-position:center 20%}
+ .hero .cta .btn{flex:1 1 100%}
+ .stats{grid-template-columns:1fr 1fr}
+ .stat{padding:20px 12px}
+ .feat{grid-template-columns:1fr}
+ .promos{grid-template-columns:1fr}
+ .pimg.contain{aspect-ratio:800/356}
+ .revs{grid-template-columns:1fr}
+ .s{grid-template-columns:96px 1fr;gap:14px;padding:12px}
+ .s .th{width:96px;height:96px}
+ .s h3{font-size:16px}
+ .s p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13px}
+ .s .row{grid-column:1/-1;padding-top:4px}
+ .price{font-size:20px}
+ .gal{grid-template-columns:1fr 1fr;gap:8px}
+ .map{min-height:340px}
+ .ct dd{font-size:18px}
+ footer.site{padding-bottom:110px}
+ .sticky{display:flex;position:fixed;inset:auto 0 0;z-index:40;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(13,13,14,.95);border-top:1px solid var(--line);gap:10px;backdrop-filter:blur(10px)}
+ .sticky .btn{flex:1}
+ .totop{display:none}
+ .score b{font-size:48px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.js .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+ <a class="logo" href="#top" aria-label="JOJO — наверх"><img src="img/logo.jpg" alt="" width="40" height="40"><span>JO<b>JO</b></span></a>
+ <nav id="nav" aria-label="Основная навигация"><ul>
+  <li><a href="#about">О нас</a></li><li><a href="#promos">Акции</a></li><li><a href="#services">Услуги и цены</a></li><li><a href="#gallery">Фото</a></li><li><a href="#reviews">Отзывы</a></li><li><a href="#contacts">Контакты</a></li>
+ </ul></nav>
+ <div class="hr"><a class="tel" data-phone data-phone-tel href="tel:+79652299036">+7 965 229 90 36</a><a class="btn sm" data-book target="_blank" rel="noopener" href="#">Записаться</a>
+ <button class="burger" id="burger" type="button" aria-controls="nav" aria-expanded="false" aria-label="Открыть меню"><span></span><span></span><span></span></button></div>
+</div></header>
+
+<main id="top">
+<section class="hero" id="hero">
+ <picture><source media="(max-width:700px)" srcset="img/in-4.jpg"><img class="hero-bg" src="img/in-1.jpg" alt="" fetchpriority="high"></picture>
+ <div class="wrap">
+  <a class="badge" data-reviews target="_blank" rel="noopener" href="#"><span class="stars">★★★★★</span> 5.0 · 533 отзыва на Яндекс Картах</a>
+  <h1>Стрижка,<br>борода, <em>стиль</em></h1>
+  <p class="sub">JOJO — мужской барбершоп на Жулебинском бульваре: стрижки, моделирование бороды, королевское бритьё и уход за лицом. Скидка 30% на первый визит.</p>
+  <div class="cta"><a class="btn" data-book target="_blank" rel="noopener" href="#">Записаться онлайн</a><a class="btn ghost" href="#services">Услуги и цены</a></div>
+  <div class="facts">
+   <a data-phone-tel href="tel:+79652299036"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><strong data-phone>+7 965 229 90 36</strong></a>
+   <a href="#contacts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-addr>Москва, Жулебинский бульвар, 14</span></a>
+   <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;color:var(--ac);vertical-align:-3px;margin-right:8px"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-hours>Ежедневно, 10:00–22:00</span></span>
+  </div>
+ </div>
+</section>
+
+<div class="stats">
+ <div class="stat"><b>5.0</b><span>рейтинг на Яндекс Картах</span></div>
+ <div class="stat"><b>533</b><span>отзыва клиентов</span></div>
+ <div class="stat"><b>−30%</b><span>на первый визит</span></div>
+ <div class="stat"><b>2026</b><span>«Хорошее место» Яндекса</span></div>
+</div>
+
+<section id="about"><div class="wrap about">
+ <div class="rv">
+  <p class="eyebrow">О нас</p><h2>Барбершоп рядом с домом</h2>
+  <p class="lead">Лучшие барберы ЮВАО выполняют стрижки, моделирование бороды и уход за лицом. Удобная запись онлайн, комфортная зона ожидания и акции для клиентов.</p>
+  <div class="feat">
+   <div><b>Онлайн-запись</b><span>Выберите мастера и время за минуту</span></div>
+   <div><b>Зона отдыха</b><span>Диван, настолки и напитки, пока ждёте</span></div>
+   <div><b>Подарочный сертификат</b><span>Отличный подарок для мужчины</span></div>
+   <div><b>Детские стрижки</b><span>И формат «Папа + Сын»</span></div>
+  </div>
+  <div class="cta"><a class="btn" data-book target="_blank" rel="noopener" href="#">Записаться</a><a class="btn ghost" href="#gallery">Смотреть фото</a></div>
+ </div>
+ <div class="collage rv">
+  <img class="big" src="img/in-1.jpg" alt="Команда барбершопа JOJO" loading="lazy" data-zoom="0">
+  <img class="sm" src="img/in-2.jpg" alt="Рабочее место барбера в JOJO" loading="lazy" data-zoom="1">
+  <img class="sm" src="img/in-3.jpg" alt="Неоновая вывеска в интерьере JOJO" loading="lazy" data-zoom="2">
+ </div>
+</div></section>
+
+<section id="promos" class="alt"><div class="wrap">
+ <p class="eyebrow">Акции</p><h2>Выгодные визиты</h2>
+ <p class="lead">Действующие предложения барбершопа. Акцию можно выбрать при онлайн-записи.</p>
+ <div class="promos" id="promoList"></div>
+</div></section>
+
+<section id="services"><div class="wrap">
+ <p class="eyebrow">Каталог</p><h2>Услуги и цены</h2>
+ <p class="lead">Выберите категорию или найдите услугу по названию. Кнопка «Записаться» откроет онлайн-запись, где можно выбрать мастера и время.</p>
+ <div class="tools">
+  <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Найти услугу" aria-label="Поиск по услугам" autocomplete="off"></label>
+  <div id="tabs" class="tabs" role="group" aria-label="Категории услуг"></div>
+ </div>
+ <div class="svc" id="svcList"></div>
+ <div class="more" id="moreWrap" hidden><button class="btn ghost" id="moreBtn" type="button"></button></div>
+ <p class="empty" id="empty" hidden>Ничего не найдено — попробуйте другой запрос.</p>
+ <p class="note">Цены указаны по данным карточки JOJO на Яндекс Картах. Точную стоимость уточняйте при записи.</p>
+</div></section>
+
+<section id="gallery" class="alt"><div class="wrap">
+ <p class="eyebrow">Фото</p><h2>Работы и интерьер</h2>
+ <p class="lead">Стрижки наших мастеров и атмосфера барбершопа. Нажмите на фото, чтобы открыть его крупно.</p>
+ <div class="tabs" id="galTabs" role="group" aria-label="Фотогалерея" style="margin-bottom:22px"></div>
+ <div class="gal" id="galList"></div>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+ <p class="eyebrow">Отзывы</p><h2>Что говорят клиенты</h2>
+ <div class="score"><b>5.0</b><div><span class="stars">★★★★★</span>533 отзыва на Яндекс Картах</div></div>
+ <div class="revs" id="revList"></div>
+ <div class="cta" style="margin-top:30px"><a class="btn ghost" data-reviews target="_blank" rel="noopener" href="#">Все отзывы на Яндекс Картах</a></div>
+</div></section>
+
+<section id="contacts" class="alt"><div class="wrap">
+ <p class="eyebrow">Контакты</p><h2>Как нас найти</h2>
+ <div class="ct" style="margin-top:30px">
+  <div><dl>
+   <div><dt>Адрес</dt><dd><a data-map target="_blank" rel="noopener" href="#"><span data-addr>Москва, Жулебинский бульвар, 14</span></a></dd></div>
+   <div><dt>Телефон</dt><dd><a data-phone-tel href="tel:+79652299036"><span data-phone>+7 965 229 90 36</span></a></dd></div>
+   <div><dt>Время работы</dt><dd data-hours>Ежедневно, 10:00–22:00</dd></div>
+   <div><dt>Telegram</dt><dd><a data-tg target="_blank" rel="noopener" href="#">@jojo_barbers</a></dd></div>
+  </dl>
+  <div class="cta"><a class="btn" data-book target="_blank" rel="noopener" href="#">Записаться онлайн</a><a class="btn ghost" data-route target="_blank" rel="noopener" href="#">Построить маршрут</a></div></div>
+  <div class="map" id="map"><div class="ph"><p>Загрузка карты…</p><a class="btn ghost sm" data-map target="_blank" rel="noopener" href="#">Открыть в Яндекс Картах</a></div></div>
+ </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+ <div class="ft">
+  <div><a class="logo" href="#top" style="margin-bottom:12px"><img src="img/logo.jpg" alt="" width="40" height="40" loading="lazy"><span>JO<b>JO</b></span></a><p data-addr>Москва, Жулебинский бульвар, 14</p><p data-hours>Ежедневно, 10:00–22:00</p></div>
+  <ul><li><a href="#promos">Акции</a></li><li><a href="#services">Услуги и цены</a></li><li><a href="#gallery">Фото</a></li><li><a href="#reviews">Отзывы</a></li><li><a href="#contacts">Контакты</a></li></ul>
+  <ul><li><a data-phone-tel href="tel:+79652299036"><span data-phone>+7 965 229 90 36</span></a></li><li><a data-tg target="_blank" rel="noopener" href="#">Telegram</a></li><li><a data-map target="_blank" rel="noopener" href="#">Яндекс Карты</a></li><li><a data-book target="_blank" rel="noopener" href="#">Записаться онлайн</a></li></ul>
+ </div>
+ <p class="legal"><span data-legal></span><br>© <span id="year">2026</span> JOJO Barbershop</p>
+</div></footer>
+
+<div class="sticky"><a class="btn" data-book target="_blank" rel="noopener" href="#">Записаться</a><a class="btn ghost" data-phone-tel href="tel:+79652299036">Позвонить</a></div>
+<button class="totop" id="totop" type="button" aria-label="Наверх"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 15 6-6 6 6"/></svg></button>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Просмотр фото">
+ <img id="lbImg" alt="">
+ <button class="x" type="button" aria-label="Закрыть">✕</button>
+ <button class="pv" type="button" aria-label="Предыдущее фото">‹</button>
+ <button class="nx" type="button" aria-label="Следующее фото">›</button>
+ <span class="cnt" id="lbCnt"></span>
+</div>
+
+<script>
+/* ===== ДАННЫЕ САЙТА — редактировать здесь ===== */
+const SITE = {
+  phone: "+7 965 229 90 36", phoneTel: "+79652299036",
+  address: "Москва, Жулебинский бульвар, 14",
+  hours: "Ежедневно, 10:00–22:00",
+  bookingUrl: "https://n1364740.yclients.com/?utm_source=site&utm_medium=button&utm_campaign=jojo",
+  telegramUrl: "https://telegram.me/jojo_barbers",
+  mapUrl: "https://yandex.ru/maps/org/20964906501",
+  routeUrl: "https://yandex.ru/maps?mode=routes&rtext=~55.697348%2C37.85159&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D20964906501",
+  reviewsUrl: "https://yandex.ru/maps/org/20964906501/reviews/",
+  mapWidget: "https://yandex.ru/map-widget/v1/?ll=37.85159%2C55.697348&z=16&pt=37.85159%2C55.697348%2Cpm2orl",
+  legal: "ИП Ермолова Руслана Павловна · ОГРНИП 323508100430754 · ИНН 502743216409"
+};
+/* fit:"contain" — показать картинку целиком (для баннеров с текстом) */
+const PROMOS = [
+  {tag:"",t:"Скидка 30% на первое посещение",d:"Барбершоп рядом с домом со скидкой 30% на первый визит. Удобная запись, приятная атмосфера и сервис, к которому хочется вернуться.",p:"до 30.11.2026",img:"img/promo-30.jpg",fit:"contain"},
+  {tag:"1 390 ₽",t:"Стрижка для студентов",d:"С понедельника по четверг с 12:00 до 18:00 — стильная мужская стрижка по специальной цене для студентов.",p:"до 31.12.2026",img:"img/promo-students.jpg"},
+  {tag:"1 390 ₽",t:"Happy Hours",d:"С понедельника по четверг с 12:00 до 18:00 — выгодная стрижка и скидки на услуги.",p:"до 31.12.2026",img:"img/promo-happy.jpg"}
+];
+/* price: число в ₽, строка (например "−30%") или null («уточняйте при записи») */
+const SERVICES = [
+  {c:"Стрижки",n:"Мужская стрижка",price:1600,img:"img/work-5.jpg",d:"Точная форма под ваш рост волос и привычную укладку: чистые виски, аккуратный затылок."},
+  {c:"Стрижки",n:"Стрижка машинкой",price:1100,img:"img/work-1.jpg",d:"Ровная длина, чистые виски и затылок, аккуратные переходы без «ступенек»."},
+  {c:"Стрижки",n:"Стрижка на ножницах",price:1900,img:"img/work-8.jpg",d:"Мягкая форма и естественная текстура — волосы легче укладываются и ровнее отрастают."},
+  {c:"Стрижки",n:"Детская стрижка",price:1400,img:"img/work-4.jpg",d:"Аккуратная форма по возрасту, чистые контуры и комфортный темп без спешки."},
+  {c:"Стрижки",n:"Стрижка Папа + Сын",price:3000,img:"img/work-4.jpg",d:"Стрижки для папы и сына за один визит."},
+  {c:"Стрижки",n:"Окантовка головы",price:700,img:"img/svc-edging.jpg",d:"Свежая линия без изменения длины: виски, затылок и контур по шее."},
+  {c:"Стрижки",n:"Укладка без стрижки",price:700,img:"img/svc-styling.jpg",d:"Уберём «хаос» после шапки, зададим направление и аккуратный объём."},
+  {c:"Борода и бритьё",n:"Стрижка бороды и усов",price:1100,img:"img/work-6.jpg",d:"Ровная длина, аккуратные усы и симметричные контуры бороды."},
+  {c:"Борода и бритьё",n:"Королевское бритьё",price:1600,img:"img/work-7.jpg",d:"Классическое бритьё с чистыми линиями и комфортом для кожи."},
+  {c:"Борода и бритьё",n:"Бритьё начисто шейвером",price:1400,img:"img/work-9.jpg",d:"Гладкий «ноль», чёткая линия по шее и вискам."},
+  {c:"Борода и бритьё",n:"Бритьё головы опасной бритвой",price:1600,img:"img/work-2.jpg",d:"Идеально гладкая голова опасной бритвой."},
+  {c:"Комплексы",n:"Мужская стрижка + моделирование бороды",price:3200,img:"img/svc-tone-beard.jpg",d:"Голова и борода как единый образ: форма волос и чёткие контуры бороды."},
+  {c:"Комплексы",n:"Мужская стрижка + моделирование шейвером",price:3090,img:"img/svc-cut-shaver.jpg",d:"Стрижка и максимально чистые контуры по шее и вискам."},
+  {c:"Комплексы",n:"Стрижка машинкой + стрижка бороды",price:2200,img:"img/work-3.jpg",d:"Быстро привести в порядок голову и бороду за один визит."},
+  {c:"Комплексы",n:"Мужская стрижка + моделирование бороды + воск",price:3700,img:"img/svc-wax-complex.jpg",d:"Стрижка, борода и воск по деталям за одно посещение."},
+  {c:"Комплексы",n:"Мужская стрижка + уход за лицом + воск",price:3700,img:"img/svc-london.jpg",d:"Обновить форму и привести кожу в порядок за один визит."},
+  {c:"Комплексы",n:"Моделирование бороды + уход за лицом + воск",price:3700,img:"img/svc-wax-ears.jpg",d:"Чёткая линия бороды, ровная кожа и аккуратные детали."},
+  {c:"Комплексы",n:"Стрижка + борода + уход за лицом + воск",price:5300,img:"img/svc-tone-both.jpg",d:"Полный комплекс: стрижка, моделирование бороды, уход за лицом и воск."},
+  {c:"Уход за лицом",n:"Чёрная маска",price:1600,img:"img/svc-black-mask.jpg",d:"Глубокое очищение пор и работа с чёрными точками — кожа свежее и матовее."},
+  {c:"Уход за лицом",n:"Волкано",price:1600,img:"img/svc-volcano.jpg",d:"Глубокая чистка и восстановление кожи лица."},
+  {c:"Уход за лицом",n:"Лондон груминг",price:2500,img:"img/svc-london.jpg",d:"Очищение, питание и восстановление кожи без домашней рутины."},
+  {c:"Тонирование",n:"Тонирование головы",price:1900,img:"img/svc-tone-head.jpg",d:"Освежить оттенок и смягчить седину без радикального окрашивания."},
+  {c:"Тонирование",n:"Тонировка бороды",price:1600,img:"img/svc-tone-beard.jpg",d:"Смягчить седину и выровнять оттенок без эффекта «закрасили»."},
+  {c:"Тонирование",n:"Тонировка бороды + головы",price:3500,img:"img/svc-tone-both.jpg",d:"Единый естественный оттенок головы и бороды."},
+  {c:"Воск",n:"Восковая депиляция ушей и носа",price:500,img:"img/svc-wax-ears.jpg",d:"Аккуратно убираем заметные волоски без домашних экспериментов."},
+  {c:"Воск",n:"Восковая депиляция одной зоны",price:400,img:"img/svc-wax-one.jpg",d:"Точечное решение, когда мешает конкретная деталь."},
+  {c:"Воск",n:"Восковая депиляция комплекс",price:700,img:"img/svc-wax-complex.jpg",d:"Несколько зон за один визит — результат держится дольше."},
+  {c:"Акции",n:"Студенческая стрижка",price:1390,img:"img/promo-students.jpg",d:"Пн–чт, 12:00–18:00, при наличии студенческого."},
+  {c:"Акции",n:"«Счастливые часы»",price:1390,img:"img/promo-happy.jpg",d:"Пн–чт, 12:00–18:00 — стрижка по специальной цене."},
+  {c:"Акции",n:"Скидка на первый визит",price:"−30%",img:"img/promo-30.jpg",d:"Для новых клиентов на первое посещение."}
+];
+const GALLERY = {
+  "Работы":["work-5","work-1","work-8","work-6","work-7","work-9","work-3","work-4","work-2"].map(f=>({src:`img/${f}.jpg`,alt:"Работа барбера JOJO"})),
+  "Интерьер":["in-1","in-2","in-3","in-4","in-5","in-6"].map(f=>({src:`img/${f}.jpg`,alt:"Интерьер барбершопа JOJO"}))
+};
+const REVIEWS = [
+  {a:"Геннадий Александрович",d:"22 октября",t:"Хорошее место. Зашёл случайно, когда заболел мой мастер в другом салоне. Попал к мастеру Алексею — с тех пор стригусь тут."},
+  {a:"Данияр Салахетдинов",d:"10 октября",t:"Отличный барбершоп! Приятная атмосфера, хорошая музыка и приветливый персонал. Пришёл подстричься как модель — подстригли максимально как я хотел. Точно приду ещё раз и посоветую друзьям."},
+  {a:"Royal Huseynov",d:"8 октября",t:"Пришёл как клиент — просто нет слов, я себя таким красивым ещё не видел. Стригли меня по-разному, но то, что сделала Карина, — no comments. Огромная благодарность, обязательно вернусь, как отрастут волосы."},
+  {a:"Алексей С.",d:"4 октября",t:"Место шикарное, просто улёт! Чуть-чуть долговато, но в целом мне понравилось. Заслуживает 5 звёзд, мастер Полина."}
+];
+
+/* ===== РЕНДЕР ===== */
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const rub=n=>typeof n==="number"?n.toLocaleString("ru-RU")+" ₽":n;
+$$("[data-book]").forEach(a=>a.href=SITE.bookingUrl);
+$$("[data-phone]").forEach(e=>e.textContent=SITE.phone);
+$$("[data-phone-tel]").forEach(a=>a.href="tel:"+SITE.phoneTel);
+$$("[data-addr]").forEach(e=>e.textContent=SITE.address);
+$$("[data-map]").forEach(a=>a.href=SITE.mapUrl);
+$$("[data-route]").forEach(a=>a.href=SITE.routeUrl);
+$$("[data-tg]").forEach(a=>a.href=SITE.telegramUrl);
+$$("[data-reviews]").forEach(a=>a.href=SITE.reviewsUrl);
+$$("[data-hours]").forEach(e=>e.textContent=SITE.hours);
+$$("[data-legal]").forEach(e=>e.textContent=SITE.legal);
+$("#year").textContent=new Date().getFullYear();
+
+$("#promoList").innerHTML=PROMOS.map(p=>`<article class="promo rv"><div class="pimg${p.fit==="contain"?" contain":""}"><img src="${p.img}" alt="${esc(p.t)}" loading="lazy">${p.tag?`<span class="ptag">${esc(p.tag)}</span>`:""}</div><div class="pb"><span class="date">${esc(p.p)}</span><h3>${esc(p.t)}</h3><p>${esc(p.d)}</p><a class="btn sm" href="${SITE.bookingUrl}" target="_blank" rel="noopener">Записаться по акции</a></div></article>`).join("");
+$("#revList").innerHTML=REVIEWS.map(r=>`<article class="rev rv"><p>«${esc(r.t)}»</p><footer><span class="av">${esc(r.a[0])}</span><div>${esc(r.a)}<time>${esc(r.d)}</time></div></footer></article>`).join("");
+
+/* услуги */
+let cat="Все", showAll=false;
+const LIMIT=10; // сколько услуг показывать во вкладке «Все» до нажатия «Показать все»
+const cats=["Все",...new Set(SERVICES.map(s=>s.c))];
+const count=c=>c==="Все"?SERVICES.length:SERVICES.filter(s=>s.c===c).length;
+$("#tabs").innerHTML=cats.map(c=>`<button class="tab" type="button" data-c="${esc(c)}" aria-pressed="${c===cat}">${esc(c)} <i>${count(c)}</i></button>`).join("");
+function drawServices(){
+  const q=$("#q").value.trim().toLowerCase();
+  const all=SERVICES.filter(s=>(q||cat==="Все"||s.c===cat)&&(s.n+" "+s.d).toLowerCase().includes(q));
+  const cut=!q&&cat==="Все"&&!showAll&&all.length>LIMIT;
+  const list=cut?all.slice(0,LIMIT):all;
+  $("#moreWrap").hidden=!cut;
+  $("#moreBtn").textContent=`Показать все услуги (${all.length})`;
+  $("#svcList").innerHTML=list.map(s=>`<article class="s"><div class="th"><img src="${s.img}" alt="${esc(s.n)}" loading="lazy" width="120" height="120"></div><div class="bd"><small>${esc(s.c)}</small><h3>${esc(s.n)}</h3>${s.d?`<p>${esc(s.d)}</p>`:""}</div><div class="row"><span class="price${s.price==null?" q":""}">${s.price==null?"Уточняйте при записи":esc(rub(s.price))}</span><a class="btn sm" href="${SITE.bookingUrl}" target="_blank" rel="noopener">Записаться</a></div></article>`).join("");
+  // на ПК строка с ценой — внутри колонки текста
+  if(matchMedia("(min-width:701px)").matches) $$("#svcList .s").forEach(a=>a.querySelector(".bd").append(a.querySelector(".row")));
+  $("#empty").hidden=list.length>0;
+}
+$("#tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;cat=b.dataset.c;$("#q").value="";$$("#tabs .tab").forEach(t=>t.setAttribute("aria-pressed",t===b));drawServices()});
+$("#q").addEventListener("input",drawServices);
+$("#moreBtn").addEventListener("click",()=>{showAll=true;drawServices()});
+let wasWide=matchMedia("(min-width:701px)").matches;
+addEventListener("resize",()=>{const w=matchMedia("(min-width:701px)").matches;if(w!==wasWide){wasWide=w;drawServices()}});
+drawServices();
+
+/* галерея + лайтбокс */
+let gcat="Работы", lbList=[], lbI=0;
+$("#galTabs").innerHTML=Object.keys(GALLERY).map(c=>`<button class="tab" type="button" data-c="${c}" aria-pressed="${c===gcat}">${c} <i>${GALLERY[c].length}</i></button>`).join("");
+function drawGallery(){
+  $("#galList").innerHTML=GALLERY[gcat].map((g,i)=>`<button type="button" data-i="${i}" aria-label="Открыть фото ${i+1}"><img src="${g.src}" alt="${g.alt}" loading="lazy"></button>`).join("");
+}
+$("#galTabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;gcat=b.dataset.c;$$("#galTabs .tab").forEach(t=>t.setAttribute("aria-pressed",t===b));drawGallery()});
+$("#galList").addEventListener("click",e=>{const b=e.target.closest("button");if(b)openLb(GALLERY[gcat],+b.dataset.i)});
+$$(".collage img").forEach(img=>img.addEventListener("click",()=>openLb(GALLERY["Интерьер"],+img.dataset.zoom)));
+drawGallery();
+const lb=$("#lb");
+function showLb(){const g=lbList[lbI];$("#lbImg").src=g.src;$("#lbImg").alt=g.alt;$("#lbCnt").textContent=`${lbI+1} / ${lbList.length}`}
+function openLb(list,i){lbList=list;lbI=i;showLb();lb.classList.add("open");document.body.style.overflow="hidden";$(".x",lb).focus()}
+function closeLb(){lb.classList.remove("open");document.body.style.overflow=""}
+const step=d=>{lbI=(lbI+d+lbList.length)%lbList.length;showLb()};
+$(".x",lb).onclick=closeLb; $(".pv",lb).onclick=()=>step(-1); $(".nx",lb).onclick=()=>step(1);
+lb.addEventListener("click",e=>{if(e.target===lb)closeLb()});
+let tx=0; lb.addEventListener("touchstart",e=>tx=e.touches[0].clientX,{passive:true});
+lb.addEventListener("touchend",e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)step(d<0?1:-1)});
+document.addEventListener("keydown",e=>{if(!lb.classList.contains("open"))return;if(e.key==="Escape")closeLb();if(e.key==="ArrowLeft")step(-1);if(e.key==="ArrowRight")step(1)});
+
+/* меню */
+const burger=$("#burger");
+const setMenu=o=>{document.body.classList.toggle("menu-open",o);burger.setAttribute("aria-expanded",o);burger.setAttribute("aria-label",o?"Закрыть меню":"Открыть меню")};
+burger.addEventListener("click",()=>setMenu(!document.body.classList.contains("menu-open")));
+$("#nav").addEventListener("click",e=>{if(e.target.closest("a"))setMenu(false)});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")setMenu(false)});
+document.addEventListener("click",e=>{if(!e.target.closest("header"))setMenu(false)});
+
+/* подсветка пункта меню и кнопка «наверх» */
+const links=$$("#nav a"), secs=links.map(a=>$(a.getAttribute("href")));
+const totop=$("#totop"); totop.onclick=()=>scrollTo({top:0,behavior:"smooth"});
+addEventListener("scroll",()=>{
+  totop.classList.toggle("show",scrollY>900);
+  let cur=null; secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i});
+  links.forEach((a,i)=>a.classList.toggle("on",i===cur));
+},{passive:true});
+
+/* интерактивная карта — подгружается, когда до неё доскроллили */
+const mapBox=$("#map");
+new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){o.disconnect();const f=document.createElement("iframe");f.src=SITE.mapWidget;f.title="JOJO на Яндекс Картах";f.loading="lazy";f.allowFullscreen=true;f.onload=()=>{const ph=$(".ph",mapBox);ph&&ph.remove()};mapBox.append(f)}},{rootMargin:"400px"}).observe(mapBox);
+
+/* анимация появления */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.08});
+$$(".rv").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
