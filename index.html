@@ -239,19 +239,7 @@ footer.site{border-top:1px solid var(--line);padding:48px 0 40px;color:var(--mut
 .art{display:flex;align-items:center;justify-content:center;min-height:0;height:100%}
 .art svg{width:100%;height:100%;max-height:600px;overflow:visible}
 .art .mess path{transform-box:fill-box;transform-origin:center}
-.anim .steps{min-height:180px}
-
-/* 3D-модель Spline */
-.look{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
-.v3d{position:relative;aspect-ratio:1;max-height:620px;width:100%;border-radius:24px;overflow:hidden;background:radial-gradient(circle at 50% 45%,#2a1a10,var(--bg) 70%);border:1px solid var(--line)}
-.v3d spline-viewer{position:absolute;inset:0;width:100%;height:100%}
-.v3d .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s}
-.v3d.ready .poster{opacity:0;pointer-events:none}
-.v3d .go{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:2}
-.v3d.ready .go,.v3d.loading .go{display:none}
-.v3d .hint{position:absolute;left:16px;top:14px;z-index:2;font-size:13px;color:var(--mut);background:rgba(13,13,14,.6);padding:6px 12px;border-radius:999px;opacity:0;transition:opacity .4s}
-.v3d.ready .hint{opacity:1}
-.anim .step{position:absolute;inset:0 0 auto;margin:0;opacity:0;transform:translateY(16px);transition:opacity .4s,transform .4s;pointer-events:none}
+.anim .steps{min-height:180px}.anim .step{position:absolute;inset:0 0 auto;margin:0;opacity:0;transform:translateY(16px);transition:opacity .4s,transform .4s;pointer-events:none}
 .anim .step.on{opacity:1;transform:none;pointer-events:auto}
 .anim .prog{display:flex}
 
@@ -293,9 +281,7 @@ footer.site{border-top:1px solid var(--line);padding:48px 0 40px;color:var(--mut
  .sticky .btn{flex:1}
  .totop{display:none}
  .score b{font-size:48px}
- .ticker{padding:14px 0}
- .look{grid-template-columns:1fr;gap:24px}
- .scene-in{grid-template-columns:1fr;gap:8px}
+ .ticker{padding:14px 0} .scene-in{grid-template-columns:1fr;gap:8px}
  .step{grid-template-columns:52px 1fr;gap:14px}
  .lt{width:52px;height:52px;border-radius:14px}
  .art svg{max-height:min(440px,58svh)}
@@ -389,19 +375,6 @@ footer.site{border-top:1px solid var(--line);padding:48px 0 40px;color:var(--mut
    </g>
    <g id="shine" fill="#fff"><path id="st1" d="M0-12 3-3 12 0 3 3 0 12-3 3-12 0-3-3z" transform="scale(0)"/><path id="st2" d="M0-12 3-3 12 0 3 3 0 12-3 3-12 0-3-3z" transform="scale(0)"/></g>
   </svg>
- </div>
-</div></section>
-
-<section id="look" class="alt" hidden><div class="wrap look">
- <div>
-  <p class="eyebrow">3D</p><h2>Ваш новый образ</h2>
-  <p class="lead">Стрижка с плавным фейдом и аккуратная борода с чёткими линиями — так выглядит результат после визита в JOJO. Подвигайте курсором: модель следит за вами.</p>
-  <div class="cta"><a class="btn" data-book target="_blank" rel="noopener" href="#">Хочу так же</a><a class="btn ghost" href="#services">Услуги и цены</a></div>
- </div>
- <div class="v3d" id="v3d">
-  <img class="poster" src="img/look3d.webp" alt="3D-модель: мужчина со стрижкой фейд и оформленной бородой" loading="lazy" decoding="async">
-  <span class="hint">Двигайте курсором</span>
-  <button class="btn go" type="button">Открыть 3D</button>
  </div>
 </div></section>
 
@@ -504,7 +477,6 @@ const SITE = {
   routeUrl: "https://yandex.ru/maps?mode=routes&rtext=~55.697348%2C37.85159&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D20964906501",
   reviewsUrl: "https://yandex.ru/maps/org/20964906501/reviews/",
   mapWidget: "https://yandex.ru/map-widget/v1/?ll=37.85159%2C55.697348&z=16&pt=37.85159%2C55.697348%2Cpm2orl",
-  splineScene: "https://prod.spline.design/9qDfh73PstvBU6aY/scene.splinecode", // ссылка на сцену Spline (…/scene.splinecode); пусто — блок 3D скрыт
   legal: "ИП Ермолова Руслана Павловна · ОГРНИП 323508100430754 · ИНН 502743216409"
 };
 /* fit:"contain" — показать картинку целиком (для баннеров с текстом) */
@@ -751,29 +723,6 @@ if(!calm)$$("[data-count]").forEach(el=>cio.observe(el));
     else if(!e.isIntersecting&&raf){cancelAnimationFrame(raf);raf=0}
   },{threshold:.35}).observe(svg);
   draw(0);
-})();
-
-/* 3D-модель Spline: на компьютере грузится сама, на телефоне — по кнопке (экономим трафик) */
-(()=>{
-  if(!SITE.splineScene)return;
-  const sec=$("#look"),box=$("#v3d"); sec.hidden=false;
-  let started=false;
-  function load(){
-    if(started)return; started=true; box.classList.add("loading");
-    const s=document.createElement("script"); s.type="module";
-    s.src="https://unpkg.com/@splinetool/viewer@2.0.111/build/spline-viewer.js";
-    document.head.append(s);
-    const v=document.createElement("spline-viewer");
-    v.setAttribute("url",SITE.splineScene); v.setAttribute("loading-anim-type","none");
-    const done=()=>box.classList.add("ready");
-    v.addEventListener("load-complete",done); setTimeout(done,9000);
-    box.prepend(v);
-  }
-  $(".go",box).addEventListener("click",load);
-  new IntersectionObserver((es,o)=>{
-    if(es[0].isIntersecting&&matchMedia("(min-width:1001px) and (pointer:fine)").matches){o.disconnect();load()}
-  },{rootMargin:"300px"}).observe(box);
-})();
-</script>
+})();</script>
 </body>
 </html>
