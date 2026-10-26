@@ -16,8 +16,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/in-1.jpg" media="(min-width: 701px)">
-<link rel="preload" as="image" href="img/in-4.jpg" media="(max-width: 700px)">
+<link rel="preload" as="image" href="img/in-1.webp" media="(min-width: 701px)">
+<link rel="preload" as="image" href="img/hero-m.webp" media="(max-width: 700px)">
 <script>document.documentElement.classList.add("js")</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BarberShop","name":"JOJO","image":"img/og.jpg","telephone":"+79652299036",
@@ -90,7 +90,7 @@ nav a:hover,nav a.on{color:var(--tx)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-block:1px solid var(--line)}
 .stat{background:var(--bg);padding:26px 20px;text-align:center}
 .stat b{display:block;font:900 clamp(24px,3.4vw,36px)/1.1 var(--hd);color:var(--ac);margin-bottom:6px}
-.stat span{color:var(--mut);font-size:14px}
+.stat>span{color:var(--mut);font-size:14px}
 
 /* about */
 .about{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
@@ -201,6 +201,50 @@ footer.site{border-top:1px solid var(--line);padding:48px 0 40px;color:var(--mut
 .js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
 .js .rv.in{opacity:1;transform:none}
 
+/* hero intro */
+.hero h1 .ln{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.06em}
+.hero h1 .ln>span{display:inline-block}
+.js .hero h1 .ln>span{transform:translateY(105%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+.js .hero h1 .ln:nth-child(3)>span{animation-delay:.12s}
+.js .hero h1 .ln:nth-child(4)>span{animation-delay:.24s}
+.js .hero .fx{opacity:0;animation:fade .8s cubic-bezier(.2,.8,.2,1) .45s forwards}
+.js .hero .badge.fx{animation-delay:.05s}
+.js .hero .cta.fx{animation-delay:.6s}
+.js .hero .facts.fx{animation-delay:.75s}
+.js .hero-bg{animation:zoom 2.6s cubic-bezier(.2,.8,.2,1) both}
+@keyframes up{to{transform:none}}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes zoom{from{transform:scale(1.12)}to{transform:none}}
+
+/* бегущая строка */
+.ticker{overflow:hidden;border-bottom:1px solid var(--line);padding:20px 0}
+.tk{display:flex;width:max-content;animation:tk 28s linear infinite}
+.tk>div{display:flex;align-items:center;gap:28px;padding-right:28px;font:900 clamp(22px,3.4vw,40px)/1 var(--hd);text-transform:uppercase;white-space:nowrap}
+.tk .o{color:transparent;-webkit-text-stroke:1.5px var(--tx)}
+.tk i{color:var(--ac);font-style:normal;font-size:.6em}
+@keyframes tk{to{transform:translateX(-50%)}}
+
+/* сцена «стрижка при прокрутке» */
+.scene-in{display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:40px}
+.steps{position:relative}
+.step{margin-bottom:22px}
+.step b{font:900 15px var(--hd);color:var(--ac);display:block;margin-bottom:6px}
+.step h3{font:900 clamp(22px,3vw,30px)/1.1 var(--hd);text-transform:uppercase;margin-bottom:8px}
+.step p{color:var(--mut);max-width:40ch}
+.step .btn{margin-top:16px}
+.prog{display:none;gap:8px;margin-top:22px}
+.prog i{height:4px;flex:1;max-width:80px;background:var(--line);border-radius:4px;overflow:hidden;position:relative}
+.prog i::after{content:"";position:absolute;inset:0;background:var(--ac);transform:scaleX(var(--f,0));transform-origin:left}
+.art{display:flex;align-items:center;justify-content:center;min-height:0;height:100%}
+.art svg{width:100%;height:100%;max-height:600px;overflow:visible}
+.art .mess path{transform-box:fill-box;transform-origin:center}
+.anim .scene{height:340vh;padding:0}
+.anim .scene-in{position:sticky;top:68px;height:calc(100svh - 68px);padding:24px 0}
+.anim .steps{min-height:170px}
+.anim .step{position:absolute;inset:0 0 auto;margin:0;opacity:0;transform:translateY(16px);transition:opacity .4s,transform .4s;pointer-events:none}
+.anim .step.on{opacity:1;transform:none;pointer-events:auto}
+.anim .prog{display:flex}
+
 @media(max-width:1000px){
  nav{position:fixed;inset:68px 0 auto;background:var(--bg);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .35s}
  .menu-open nav{max-height:calc(100svh - 68px);overflow:auto}
@@ -239,8 +283,20 @@ footer.site{border-top:1px solid var(--line);padding:48px 0 40px;color:var(--mut
  .sticky .btn{flex:1}
  .totop{display:none}
  .score b{font-size:48px}
+ .ticker{padding:14px 0}
+ .scene-in{grid-template-columns:1fr;gap:8px}
+ .anim .scene{height:300vh}
+ .anim .scene-in{height:calc(100svh - 68px - 70px);grid-template-rows:auto 1fr;padding:16px 0 4px}
+ .anim .scene h2{font-size:24px;margin-bottom:10px}
+ .anim .scene .eyebrow{margin-bottom:6px}
+ .anim .steps{min-height:92px}
+ .anim .step h3{font-size:20px;margin-bottom:4px}
+ .anim .step p{font-size:14px;line-height:1.45}
+ .anim .step .btn{display:none}
+ .anim .prog{margin-top:6px}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.js .rv{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.js .rv{opacity:1;transform:none}
+ .js .hero h1 .ln>span,.js .hero .fx,.js .hero-bg,.tk{animation:none!important;transform:none!important;opacity:1!important}}
 </style>
 </head>
 <body>
@@ -255,13 +311,13 @@ footer.site{border-top:1px solid var(--line);padding:48px 0 40px;color:var(--mut
 
 <main id="top">
 <section class="hero" id="hero">
- <picture><source media="(max-width:700px)" srcset="img/in-4.jpg"><img class="hero-bg" src="img/in-1.jpg" alt="" fetchpriority="high"></picture>
+ <picture><source media="(max-width:700px)" srcset="img/hero-m.webp"><img class="hero-bg" src="img/in-1.webp" alt="" fetchpriority="high"></picture>
  <div class="wrap">
-  <a class="badge" data-reviews target="_blank" rel="noopener" href="#"><span class="stars">★★★★★</span> 5.0 · 533 отзыва на Яндекс Картах</a>
-  <h1>Стрижка,<br>борода, <em>стиль</em></h1>
-  <p class="sub">JOJO — мужской барбершоп на Жулебинском бульваре: стрижки, моделирование бороды, королевское бритьё и уход за лицом. Скидка 30% на первый визит.</p>
-  <div class="cta"><a class="btn" data-book target="_blank" rel="noopener" href="#">Записаться онлайн</a><a class="btn ghost" href="#services">Услуги и цены</a></div>
-  <div class="facts">
+  <a class="badge fx" data-reviews target="_blank" rel="noopener" href="#"><span class="stars">★★★★★</span> 5.0 · 533 отзыва на Яндекс Картах</a>
+  <h1><span class="ln"><span>Стрижка,</span></span><br><span class="ln"><span>борода,</span></span> <span class="ln"><span><em>стиль</em></span></span></h1>
+  <p class="sub fx">JOJO — мужской барбершоп на Жулебинском бульваре: стрижки, моделирование бороды, королевское бритьё и уход за лицом. Скидка 30% на первый визит.</p>
+  <div class="cta fx"><a class="btn" data-book target="_blank" rel="noopener" href="#">Записаться онлайн</a><a class="btn ghost" href="#services">Услуги и цены</a></div>
+  <div class="facts fx">
    <a data-phone-tel href="tel:+79652299036"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><strong data-phone>+7 965 229 90 36</strong></a>
    <a href="#contacts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-addr>Москва, Жулебинский бульвар, 14</span></a>
    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;color:var(--ac);vertical-align:-3px;margin-right:8px"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-hours>Ежедневно, 10:00–22:00</span></span>
@@ -270,11 +326,61 @@ footer.site{border-top:1px solid var(--line);padding:48px 0 40px;color:var(--mut
 </section>
 
 <div class="stats">
- <div class="stat"><b>5.0</b><span>рейтинг на Яндекс Картах</span></div>
- <div class="stat"><b>533</b><span>отзыва клиентов</span></div>
- <div class="stat"><b>−30%</b><span>на первый визит</span></div>
+ <div class="stat"><b data-count="5" data-dec="1">5.0</b><span>рейтинг на Яндекс Картах</span></div>
+ <div class="stat"><b data-count="533">533</b><span>отзыва клиентов</span></div>
+ <div class="stat"><b>−<span data-count="30">30</span>%</b><span>на первый визит</span></div>
  <div class="stat"><b>2026</b><span>«Хорошее место» Яндекса</span></div>
 </div>
+
+<div class="ticker" aria-hidden="true"><div class="tk">
+ <div><span>Стрижки</span><i>✦</i><span class="o">Борода</span><i>✦</i><span>Королевское бритьё</span><i>✦</i><span class="o">Уход за лицом</span><i>✦</i><span>Тонирование</span><i>✦</i><span class="o">Воск</span><i>✦</i></div>
+ <div><span>Стрижки</span><i>✦</i><span class="o">Борода</span><i>✦</i><span>Королевское бритьё</span><i>✦</i><span class="o">Уход за лицом</span><i>✦</i><span>Тонирование</span><i>✦</i><span class="o">Воск</span><i>✦</i></div>
+</div></div>
+
+<section class="scene" id="scene"><div class="wrap scene-in">
+ <div>
+  <p class="eyebrow">Как это работает</p><h2>От хаоса — к стилю</h2>
+  <div class="steps">
+   <div class="step on"><b>01</b><h3>Стрижка</h3><p>Убираем лишнее и задаём форму под ваш тип волос и черты лица.</p></div>
+   <div class="step"><b>02</b><h3>Борода</h3><p>Ровная длина, симметрия и чёткие контуры — без «ступенек».</p></div>
+   <div class="step"><b>03</b><h3>Готово</h3><p>Свежий образ, который легко повторить дома.</p><a class="btn" data-book target="_blank" rel="noopener" href="#">Записаться</a></div>
+  </div>
+  <div class="prog" aria-hidden="true"><i></i><i></i><i></i></div>
+ </div>
+ <div class="art" aria-hidden="true">
+  <svg viewBox="0 0 400 480" id="barber">
+   <defs><radialGradient id="bgc" cx=".5" cy=".4" r=".6"><stop offset="0" stop-color="#ff9150"/><stop offset="1" stop-color="#b9521a"/></radialGradient></defs>
+   <circle cx="200" cy="225" r="175" fill="url(#bgc)"/>
+   <circle cx="200" cy="225" r="190" fill="none" stroke="#e8742a" stroke-opacity=".35" stroke-dasharray="2 10" stroke-width="2"/>
+   <path d="M172 300h56v62h-56z" fill="#c98f6b"/>
+   <path d="M30 480C45 398 118 362 172 352h56c54 10 127 46 142 128z" fill="#efe9df"/>
+   <path d="M164 352c10 12 62 12 72 0l-6 16c-14 9-46 9-60 0z" fill="#d8d0c3"/>
+   <ellipse cx="139" cy="240" rx="12" ry="20" fill="#d39c76"/><ellipse cx="261" cy="240" rx="12" ry="20" fill="#d39c76"/>
+   <path d="M140 200C138 140 262 140 260 200l-1 45c-3 55-27 97-59 100-32-3-56-45-59-100z" fill="#e2b18b"/>
+   <path d="M163 226q13-9 27-3M210 223q14-6 27 3" stroke="#2a1e19" stroke-width="5" stroke-linecap="round" fill="none"/>
+   <ellipse cx="176" cy="240" rx="6" ry="3.6" fill="#2a1d17"/><ellipse cx="224" cy="240" rx="6" ry="3.6" fill="#2a1d17"/>
+   <path d="M201 236c-2 16-7 26-5 32 3 4 8 4 12 0" stroke="#b77a58" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+   <path d="M142 248c4 42 30 97 58 100 28-3 54-58 58-100-6 14-12 24-20 30-10 8-24 12-38 12s-28-4-38-12c-8-6-14-16-20-30z" fill="#2a1e19"/>
+   <path d="M174 293c8-14 44-14 52 0-11-6-41-6-52 0z" fill="#2a1e19"/>
+   <ellipse cx="200" cy="302" rx="9" ry="3" fill="#b5655a"/>
+   <path d="M136 214c-8-64 24-108 66-108s72 44 62 108c-2-18-6-32-12-42-16-12-38-16-52-16-18 0-38 6-52 18-6 10-10 24-12 40z" fill="#2a1e19"/>
+   <path d="M137 205h7l1 45h-4z M263 205h-7l-1 45h4z" fill="#2a1e19"/>
+   <g class="mess" id="beardMess"></g>
+   <g class="mess" id="hairMess"></g>
+   <g id="scissors" opacity="0">
+    <g class="bl1"><path d="M0-3 58-1 0 4z" fill="#dfe3e8"/><circle cx="-24" cy="-10" r="10" fill="none" stroke="#e8742a" stroke-width="5"/><path d="M-15-7 0-1" stroke="#e8742a" stroke-width="5"/></g>
+    <g class="bl2"><path d="M0 3 58 1 0-4z" fill="#c4cad1"/><circle cx="-24" cy="10" r="10" fill="none" stroke="#e8742a" stroke-width="5"/><path d="M-15 7 0 1" stroke="#e8742a" stroke-width="5"/></g>
+    <circle r="3.5" fill="#8a9099"/>
+   </g>
+   <g id="trimmer" opacity="0">
+    <rect x="-78" y="-13" width="70" height="26" rx="13" fill="#1d1d21" stroke="#3a3a40" stroke-width="2"/>
+    <rect x="-60" y="-4" width="30" height="8" rx="4" fill="#e8742a"/>
+    <path d="M-10-15h14v30h-14z" fill="#dfe3e8"/><path d="M4-15v30" stroke="#8a9099" stroke-width="3" stroke-dasharray="2 2"/>
+   </g>
+   <g id="shine" fill="#fff"><path id="st1" d="M0-12 3-3 12 0 3 3 0 12-3 3-12 0-3-3z" transform="scale(0)"/><path id="st2" d="M0-12 3-3 12 0 3 3 0 12-3 3-12 0-3-3z" transform="scale(0)"/></g>
+  </svg>
+ </div>
+</div></section>
 
 <section id="about"><div class="wrap about">
  <div class="rv">
@@ -289,9 +395,9 @@ footer.site{border-top:1px solid var(--line);padding:48px 0 40px;color:var(--mut
   <div class="cta"><a class="btn" data-book target="_blank" rel="noopener" href="#">Записаться</a><a class="btn ghost" href="#gallery">Смотреть фото</a></div>
  </div>
  <div class="collage rv">
-  <img class="big" src="img/in-1.jpg" alt="Команда барбершопа JOJO" loading="lazy" data-zoom="0">
-  <img class="sm" src="img/in-2.jpg" alt="Рабочее место барбера в JOJO" loading="lazy" data-zoom="1">
-  <img class="sm" src="img/in-3.jpg" alt="Неоновая вывеска в интерьере JOJO" loading="lazy" data-zoom="2">
+  <img class="big" src="img/in-1.webp" alt="Команда барбершопа JOJO" loading="lazy" decoding="async" width="1200" height="900" data-zoom="0">
+  <img class="sm" src="img/t/in-2.webp" alt="Рабочее место барбера в JOJO" loading="lazy" decoding="async" width="420" height="560" data-zoom="1">
+  <img class="sm" src="img/t/in-3.webp" alt="Неоновая вывеска в интерьере JOJO" loading="lazy" decoding="async" width="420" height="560" data-zoom="2">
  </div>
 </div></section>
 
@@ -379,46 +485,46 @@ const SITE = {
 };
 /* fit:"contain" — показать картинку целиком (для баннеров с текстом) */
 const PROMOS = [
-  {tag:"",t:"Скидка 30% на первое посещение",d:"Барбершоп рядом с домом со скидкой 30% на первый визит. Удобная запись, приятная атмосфера и сервис, к которому хочется вернуться.",p:"до 30.11.2026",img:"img/promo-30.jpg",fit:"contain"},
-  {tag:"1 390 ₽",t:"Стрижка для студентов",d:"С понедельника по четверг с 12:00 до 18:00 — стильная мужская стрижка по специальной цене для студентов.",p:"до 31.12.2026",img:"img/promo-students.jpg"},
-  {tag:"1 390 ₽",t:"Happy Hours",d:"С понедельника по четверг с 12:00 до 18:00 — выгодная стрижка и скидки на услуги.",p:"до 31.12.2026",img:"img/promo-happy.jpg"}
+  {tag:"",t:"Скидка 30% на первое посещение",d:"Барбершоп рядом с домом со скидкой 30% на первый визит. Удобная запись, приятная атмосфера и сервис, к которому хочется вернуться.",p:"до 30.11.2026",img:"img/promo-30.webp",fit:"contain"},
+  {tag:"1 390 ₽",t:"Стрижка для студентов",d:"С понедельника по четверг с 12:00 до 18:00 — стильная мужская стрижка по специальной цене для студентов.",p:"до 31.12.2026",img:"img/promo-students.webp"},
+  {tag:"1 390 ₽",t:"Happy Hours",d:"С понедельника по четверг с 12:00 до 18:00 — выгодная стрижка и скидки на услуги.",p:"до 31.12.2026",img:"img/promo-happy.webp"}
 ];
 /* price: число в ₽, строка (например "−30%") или null («уточняйте при записи») */
 const SERVICES = [
-  {c:"Стрижки",n:"Мужская стрижка",price:1600,img:"img/work-5.jpg",d:"Точная форма под ваш рост волос и привычную укладку: чистые виски, аккуратный затылок."},
-  {c:"Стрижки",n:"Стрижка машинкой",price:1100,img:"img/work-1.jpg",d:"Ровная длина, чистые виски и затылок, аккуратные переходы без «ступенек»."},
-  {c:"Стрижки",n:"Стрижка на ножницах",price:1900,img:"img/work-8.jpg",d:"Мягкая форма и естественная текстура — волосы легче укладываются и ровнее отрастают."},
-  {c:"Стрижки",n:"Детская стрижка",price:1400,img:"img/work-4.jpg",d:"Аккуратная форма по возрасту, чистые контуры и комфортный темп без спешки."},
-  {c:"Стрижки",n:"Стрижка Папа + Сын",price:3000,img:"img/work-4.jpg",d:"Стрижки для папы и сына за один визит."},
-  {c:"Стрижки",n:"Окантовка головы",price:700,img:"img/svc-edging.jpg",d:"Свежая линия без изменения длины: виски, затылок и контур по шее."},
-  {c:"Стрижки",n:"Укладка без стрижки",price:700,img:"img/svc-styling.jpg",d:"Уберём «хаос» после шапки, зададим направление и аккуратный объём."},
-  {c:"Борода и бритьё",n:"Стрижка бороды и усов",price:1100,img:"img/work-6.jpg",d:"Ровная длина, аккуратные усы и симметричные контуры бороды."},
-  {c:"Борода и бритьё",n:"Королевское бритьё",price:1600,img:"img/work-7.jpg",d:"Классическое бритьё с чистыми линиями и комфортом для кожи."},
-  {c:"Борода и бритьё",n:"Бритьё начисто шейвером",price:1400,img:"img/work-9.jpg",d:"Гладкий «ноль», чёткая линия по шее и вискам."},
-  {c:"Борода и бритьё",n:"Бритьё головы опасной бритвой",price:1600,img:"img/work-2.jpg",d:"Идеально гладкая голова опасной бритвой."},
-  {c:"Комплексы",n:"Мужская стрижка + моделирование бороды",price:3200,img:"img/svc-tone-beard.jpg",d:"Голова и борода как единый образ: форма волос и чёткие контуры бороды."},
-  {c:"Комплексы",n:"Мужская стрижка + моделирование шейвером",price:3090,img:"img/svc-cut-shaver.jpg",d:"Стрижка и максимально чистые контуры по шее и вискам."},
-  {c:"Комплексы",n:"Стрижка машинкой + стрижка бороды",price:2200,img:"img/work-3.jpg",d:"Быстро привести в порядок голову и бороду за один визит."},
-  {c:"Комплексы",n:"Мужская стрижка + моделирование бороды + воск",price:3700,img:"img/svc-wax-complex.jpg",d:"Стрижка, борода и воск по деталям за одно посещение."},
-  {c:"Комплексы",n:"Мужская стрижка + уход за лицом + воск",price:3700,img:"img/svc-london.jpg",d:"Обновить форму и привести кожу в порядок за один визит."},
-  {c:"Комплексы",n:"Моделирование бороды + уход за лицом + воск",price:3700,img:"img/svc-wax-ears.jpg",d:"Чёткая линия бороды, ровная кожа и аккуратные детали."},
-  {c:"Комплексы",n:"Стрижка + борода + уход за лицом + воск",price:5300,img:"img/svc-tone-both.jpg",d:"Полный комплекс: стрижка, моделирование бороды, уход за лицом и воск."},
-  {c:"Уход за лицом",n:"Чёрная маска",price:1600,img:"img/svc-black-mask.jpg",d:"Глубокое очищение пор и работа с чёрными точками — кожа свежее и матовее."},
-  {c:"Уход за лицом",n:"Волкано",price:1600,img:"img/svc-volcano.jpg",d:"Глубокая чистка и восстановление кожи лица."},
-  {c:"Уход за лицом",n:"Лондон груминг",price:2500,img:"img/svc-london.jpg",d:"Очищение, питание и восстановление кожи без домашней рутины."},
-  {c:"Тонирование",n:"Тонирование головы",price:1900,img:"img/svc-tone-head.jpg",d:"Освежить оттенок и смягчить седину без радикального окрашивания."},
-  {c:"Тонирование",n:"Тонировка бороды",price:1600,img:"img/svc-tone-beard.jpg",d:"Смягчить седину и выровнять оттенок без эффекта «закрасили»."},
-  {c:"Тонирование",n:"Тонировка бороды + головы",price:3500,img:"img/svc-tone-both.jpg",d:"Единый естественный оттенок головы и бороды."},
-  {c:"Воск",n:"Восковая депиляция ушей и носа",price:500,img:"img/svc-wax-ears.jpg",d:"Аккуратно убираем заметные волоски без домашних экспериментов."},
-  {c:"Воск",n:"Восковая депиляция одной зоны",price:400,img:"img/svc-wax-one.jpg",d:"Точечное решение, когда мешает конкретная деталь."},
-  {c:"Воск",n:"Восковая депиляция комплекс",price:700,img:"img/svc-wax-complex.jpg",d:"Несколько зон за один визит — результат держится дольше."},
-  {c:"Акции",n:"Студенческая стрижка",price:1390,img:"img/promo-students.jpg",d:"Пн–чт, 12:00–18:00, при наличии студенческого."},
-  {c:"Акции",n:"«Счастливые часы»",price:1390,img:"img/promo-happy.jpg",d:"Пн–чт, 12:00–18:00 — стрижка по специальной цене."},
-  {c:"Акции",n:"Скидка на первый визит",price:"−30%",img:"img/promo-30.jpg",d:"Для новых клиентов на первое посещение."}
+  {c:"Стрижки",n:"Мужская стрижка",price:1600,img:"img/work-5.webp",d:"Точная форма под ваш рост волос и привычную укладку: чистые виски, аккуратный затылок."},
+  {c:"Стрижки",n:"Стрижка машинкой",price:1100,img:"img/work-1.webp",d:"Ровная длина, чистые виски и затылок, аккуратные переходы без «ступенек»."},
+  {c:"Стрижки",n:"Стрижка на ножницах",price:1900,img:"img/work-8.webp",d:"Мягкая форма и естественная текстура — волосы легче укладываются и ровнее отрастают."},
+  {c:"Стрижки",n:"Детская стрижка",price:1400,img:"img/work-4.webp",d:"Аккуратная форма по возрасту, чистые контуры и комфортный темп без спешки."},
+  {c:"Стрижки",n:"Стрижка Папа + Сын",price:3000,img:"img/work-4.webp",d:"Стрижки для папы и сына за один визит."},
+  {c:"Стрижки",n:"Окантовка головы",price:700,img:"img/svc-edging.webp",d:"Свежая линия без изменения длины: виски, затылок и контур по шее."},
+  {c:"Стрижки",n:"Укладка без стрижки",price:700,img:"img/svc-styling.webp",d:"Уберём «хаос» после шапки, зададим направление и аккуратный объём."},
+  {c:"Борода и бритьё",n:"Стрижка бороды и усов",price:1100,img:"img/work-6.webp",d:"Ровная длина, аккуратные усы и симметричные контуры бороды."},
+  {c:"Борода и бритьё",n:"Королевское бритьё",price:1600,img:"img/work-7.webp",d:"Классическое бритьё с чистыми линиями и комфортом для кожи."},
+  {c:"Борода и бритьё",n:"Бритьё начисто шейвером",price:1400,img:"img/work-9.webp",d:"Гладкий «ноль», чёткая линия по шее и вискам."},
+  {c:"Борода и бритьё",n:"Бритьё головы опасной бритвой",price:1600,img:"img/work-2.webp",d:"Идеально гладкая голова опасной бритвой."},
+  {c:"Комплексы",n:"Мужская стрижка + моделирование бороды",price:3200,img:"img/svc-tone-beard.webp",d:"Голова и борода как единый образ: форма волос и чёткие контуры бороды."},
+  {c:"Комплексы",n:"Мужская стрижка + моделирование шейвером",price:3090,img:"img/svc-cut-shaver.webp",d:"Стрижка и максимально чистые контуры по шее и вискам."},
+  {c:"Комплексы",n:"Стрижка машинкой + стрижка бороды",price:2200,img:"img/work-3.webp",d:"Быстро привести в порядок голову и бороду за один визит."},
+  {c:"Комплексы",n:"Мужская стрижка + моделирование бороды + воск",price:3700,img:"img/svc-wax-complex.webp",d:"Стрижка, борода и воск по деталям за одно посещение."},
+  {c:"Комплексы",n:"Мужская стрижка + уход за лицом + воск",price:3700,img:"img/svc-london.webp",d:"Обновить форму и привести кожу в порядок за один визит."},
+  {c:"Комплексы",n:"Моделирование бороды + уход за лицом + воск",price:3700,img:"img/svc-wax-ears.webp",d:"Чёткая линия бороды, ровная кожа и аккуратные детали."},
+  {c:"Комплексы",n:"Стрижка + борода + уход за лицом + воск",price:5300,img:"img/svc-tone-both.webp",d:"Полный комплекс: стрижка, моделирование бороды, уход за лицом и воск."},
+  {c:"Уход за лицом",n:"Чёрная маска",price:1600,img:"img/svc-black-mask.webp",d:"Глубокое очищение пор и работа с чёрными точками — кожа свежее и матовее."},
+  {c:"Уход за лицом",n:"Волкано",price:1600,img:"img/svc-volcano.webp",d:"Глубокая чистка и восстановление кожи лица."},
+  {c:"Уход за лицом",n:"Лондон груминг",price:2500,img:"img/svc-london.webp",d:"Очищение, питание и восстановление кожи без домашней рутины."},
+  {c:"Тонирование",n:"Тонирование головы",price:1900,img:"img/svc-tone-head.webp",d:"Освежить оттенок и смягчить седину без радикального окрашивания."},
+  {c:"Тонирование",n:"Тонировка бороды",price:1600,img:"img/svc-tone-beard.webp",d:"Смягчить седину и выровнять оттенок без эффекта «закрасили»."},
+  {c:"Тонирование",n:"Тонировка бороды + головы",price:3500,img:"img/svc-tone-both.webp",d:"Единый естественный оттенок головы и бороды."},
+  {c:"Воск",n:"Восковая депиляция ушей и носа",price:500,img:"img/svc-wax-ears.webp",d:"Аккуратно убираем заметные волоски без домашних экспериментов."},
+  {c:"Воск",n:"Восковая депиляция одной зоны",price:400,img:"img/svc-wax-one.webp",d:"Точечное решение, когда мешает конкретная деталь."},
+  {c:"Воск",n:"Восковая депиляция комплекс",price:700,img:"img/svc-wax-complex.webp",d:"Несколько зон за один визит — результат держится дольше."},
+  {c:"Акции",n:"Студенческая стрижка",price:1390,img:"img/promo-students.webp",d:"Пн–чт, 12:00–18:00, при наличии студенческого."},
+  {c:"Акции",n:"«Счастливые часы»",price:1390,img:"img/promo-happy.webp",d:"Пн–чт, 12:00–18:00 — стрижка по специальной цене."},
+  {c:"Акции",n:"Скидка на первый визит",price:"−30%",img:"img/promo-30.webp",d:"Для новых клиентов на первое посещение."}
 ];
 const GALLERY = {
-  "Работы":["work-5","work-1","work-8","work-6","work-7","work-9","work-3","work-4","work-2"].map(f=>({src:`img/${f}.jpg`,alt:"Работа барбера JOJO"})),
-  "Интерьер":["in-1","in-2","in-3","in-4","in-5","in-6"].map(f=>({src:`img/${f}.jpg`,alt:"Интерьер барбершопа JOJO"}))
+  "Работы":["work-5","work-1","work-8","work-6","work-7","work-9","work-3","work-4","work-2"].map(f=>({src:`img/${f}.webp`,alt:"Работа барбера JOJO"})),
+  "Интерьер":["in-1","in-2","in-3","in-4","in-5","in-6"].map(f=>({src:`img/${f}.webp`,alt:"Интерьер барбершопа JOJO"}))
 };
 const REVIEWS = [
   {a:"Геннадий Александрович",d:"22 октября",t:"Хорошее место. Зашёл случайно, когда заболел мой мастер в другом салоне. Попал к мастеру Алексею — с тех пор стригусь тут."},
@@ -430,6 +536,7 @@ const REVIEWS = [
 /* ===== РЕНДЕР ===== */
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const thumb=src=>src.endsWith(".webp")?src.replace("img/","img/t/"):src; // уменьшенная копия из img/t/ (для новых .jpg — сам файл)
 const rub=n=>typeof n==="number"?n.toLocaleString("ru-RU")+" ₽":n;
 $$("[data-book]").forEach(a=>a.href=SITE.bookingUrl);
 $$("[data-phone]").forEach(e=>e.textContent=SITE.phone);
@@ -459,7 +566,7 @@ function drawServices(){
   const list=cut?all.slice(0,LIMIT):all;
   $("#moreWrap").hidden=!cut;
   $("#moreBtn").textContent=`Показать все услуги (${all.length})`;
-  $("#svcList").innerHTML=list.map(s=>`<article class="s"><div class="th"><img src="${s.img}" alt="${esc(s.n)}" loading="lazy" width="120" height="120"></div><div class="bd"><small>${esc(s.c)}</small><h3>${esc(s.n)}</h3>${s.d?`<p>${esc(s.d)}</p>`:""}</div><div class="row"><span class="price${s.price==null?" q":""}">${s.price==null?"Уточняйте при записи":esc(rub(s.price))}</span><a class="btn sm" href="${SITE.bookingUrl}" target="_blank" rel="noopener">Записаться</a></div></article>`).join("");
+  $("#svcList").innerHTML=list.map(s=>`<article class="s"><div class="th"><img src="${thumb(s.img)}" alt="${esc(s.n)}" loading="lazy" decoding="async" width="120" height="120"></div><div class="bd"><small>${esc(s.c)}</small><h3>${esc(s.n)}</h3>${s.d?`<p>${esc(s.d)}</p>`:""}</div><div class="row"><span class="price${s.price==null?" q":""}">${s.price==null?"Уточняйте при записи":esc(rub(s.price))}</span><a class="btn sm" href="${SITE.bookingUrl}" target="_blank" rel="noopener">Записаться</a></div></article>`).join("");
   // на ПК строка с ценой — внутри колонки текста
   if(matchMedia("(min-width:701px)").matches) $$("#svcList .s").forEach(a=>a.querySelector(".bd").append(a.querySelector(".row")));
   $("#empty").hidden=list.length>0;
@@ -475,7 +582,7 @@ drawServices();
 let gcat="Работы", lbList=[], lbI=0;
 $("#galTabs").innerHTML=Object.keys(GALLERY).map(c=>`<button class="tab" type="button" data-c="${c}" aria-pressed="${c===gcat}">${c} <i>${GALLERY[c].length}</i></button>`).join("");
 function drawGallery(){
-  $("#galList").innerHTML=GALLERY[gcat].map((g,i)=>`<button type="button" data-i="${i}" aria-label="Открыть фото ${i+1}"><img src="${g.src}" alt="${g.alt}" loading="lazy"></button>`).join("");
+  $("#galList").innerHTML=GALLERY[gcat].map((g,i)=>`<button type="button" data-i="${i}" aria-label="Открыть фото ${i+1}"><img src="${thumb(g.src)}" alt="${g.alt}" loading="lazy" decoding="async"></button>`).join("");
 }
 $("#galTabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;gcat=b.dataset.c;$$("#galTabs .tab").forEach(t=>t.setAttribute("aria-pressed",t===b));drawGallery()});
 $("#galList").addEventListener("click",e=>{const b=e.target.closest("button");if(b)openLb(GALLERY[gcat],+b.dataset.i)});
@@ -516,6 +623,96 @@ new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){o.disconnect();const 
 /* анимация появления */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.08});
 $$(".rv").forEach(el=>io.observe(el));
+
+const calm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+/* счётчики в полосе статистики */
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);
+  const el=e.target,to=+el.dataset.count,dec=+(el.dataset.dec||0),t0=performance.now();
+  const tick=now=>{const t=Math.min(1,(now-t0)/1400),v=to*(1-Math.pow(1-t,3));el.textContent=v.toFixed(dec);if(t<1)requestAnimationFrame(tick)};
+  requestAnimationFrame(tick)}),{threshold:.6});
+if(!calm)$$("[data-count]").forEach(el=>cio.observe(el));
+
+/* сцена: при прокрутке ножницы стригут волосы, триммер — бороду */
+(()=>{
+  const scene=$("#scene"), svg=$("#barber"), NS="http://www.w3.org/2000/svg";
+  let seed=11; const rnd=()=>(seed=seed*16807%2147483647)/2147483647;
+  const cl=v=>v<0?0:v>1?1:v, rad=d=>d*Math.PI/180, COL=["#2a1e19","#33251e","#3d2c23"];
+  const tufts=[];
+  // прядь: от точки (bx,by) в направлении dir (градусы, 90 = вверх)
+  function tuft(g,bx,by,dir,len,w,curl,cut){
+    const ux=Math.cos(rad(dir)),uy=-Math.sin(rad(dir)),px=-uy,py=ux,f=n=>n.toFixed(1);
+    const tx=bx+ux*len+px*curl,ty=by+uy*len+py*curl;
+    const p=document.createElementNS(NS,"path");
+    p.setAttribute("d",`M${f(bx+px*w/2)} ${f(by+py*w/2)}Q${f(bx+ux*len*.55+px*(w*.6+curl*.5))} ${f(by+uy*len*.55+py*(w*.6+curl*.5))} ${f(tx)} ${f(ty)}Q${f(bx+ux*len*.5+px*(curl*.5-w*.3))} ${f(by+uy*len*.5+py*(curl*.5-w*.3))} ${f(bx-px*w/2)} ${f(by-py*w/2)}Z`);
+    p.setAttribute("fill",COL[rnd()*3|0]);
+    g.append(p);
+    tufts.push({el:p,cut,dx:(bx-200)/2+(rnd()-.5)*30,spin:(rnd()-.5)*240,last:-1});
+  }
+  const hair=$("#hairMess"), beard=$("#beardMess");
+  // лохматая шевелюра: пряди по дуге макушки, по бокам свисают вниз
+  for(let k=0;k<2;k++)for(let i=0;i<22;i++){
+    const a=172-i*(164/21)+(rnd()-.5)*6+k*3.5;
+    const bx=200+60*.85*Math.cos(rad(a)),by=190-80*.85*Math.sin(rad(a));
+    const droop=(a<90?-1:1)*40*(1-Math.sin(rad(a)));
+    const side=Math.abs(90-a)>60;
+    tuft(hair,bx,by,a+droop+(rnd()-.5)*20,(side?48:30)+rnd()*(k?26:38),18+rnd()*8,(rnd()-.5)*24,.12+(172-a)/164*.34);
+  }
+  // чёлка на лоб
+  for(let i=0;i<6;i++){
+    const x=162+i*15+(rnd()-.5)*6;
+    tuft(hair,x,166,270+(x-200)*.35,52+rnd()*14,20,(rnd()-.5)*14,.12+(x-140)/120*.34);
+  }
+  // длинная неровная борода
+  for(let k=0;k<2;k++)for(let i=0;i<16;i++){
+    const a=196+i*(148/15)+(rnd()-.5)*6+k*4;
+    const bx=200+58*.92*Math.cos(rad(a)),by=262-84*.92*Math.sin(rad(a));
+    tuft(beard,bx,by,a+(270-a)*.55+(rnd()-.5)*16,26+rnd()*28-Math.sin(rad(a))*28,16+rnd()*7,(rnd()-.5)*18,.56+(a-196)/148*.3);
+  }
+
+  const sc=$("#scissors"),b1=$(".bl1",sc),b2=$(".bl2",sc),tr=$("#trimmer"),st1=$("#st1"),st2=$("#st2");
+  const steps=$$(".step",scene), bars=$$(".prog i",scene);
+  const ramp=(p,a,b,c,d)=>Math.min(cl((p-a)/(b-a)),1-cl((p-c)/(d-c)));
+  // инструмент на дуге вокруг (cx,cy), остриём к центру
+  function place(el,a,cx,cy,rx,ry,jit){
+    const x=cx+rx*Math.cos(rad(a)),y=cy-ry*Math.sin(rad(a)),r=Math.atan2(cy-y,cx-x)*180/Math.PI;
+    el.setAttribute("transform",`translate(${(x+jit).toFixed(1)} ${y.toFixed(1)}) rotate(${r.toFixed(1)})`);
+  }
+  let lastStep=-1;
+  function draw(p){
+    for(const t of tufts){
+      const k=cl((p-t.cut)/.14);
+      if(k===t.last)continue; t.last=k;
+      t.el.style.transform=k?`translate(${(t.dx*k).toFixed(1)}px,${(320*k*k+12*k).toFixed(1)}px) rotate(${(t.spin*k).toFixed(0)}deg)`:"";
+      t.el.style.opacity=k?(1-k*k).toFixed(2):"";
+    }
+    const ps=cl((p-.12)/.34), pt=cl((p-.56)/.3);
+    sc.setAttribute("opacity",ramp(p,.06,.11,.47,.51).toFixed(2));
+    place(sc,172-ps*164,200,190,122,140,0);
+    const o=5+14*Math.abs(Math.sin(p*140));
+    b1.setAttribute("transform",`rotate(${-o})`); b2.setAttribute("transform",`rotate(${o})`);
+    tr.setAttribute("opacity",ramp(p,.51,.56,.87,.91).toFixed(2));
+    place(tr,196+pt*148,200,262,96,112,Math.sin(p*900)*1.2);
+    const s=cl((p-.9)/.06);
+    st1.setAttribute("transform",`translate(266 118) scale(${(s*1.3).toFixed(2)}) rotate(${(s*90).toFixed(0)})`);
+    st2.setAttribute("transform",`translate(134 312) scale(${(s*.9).toFixed(2)}) rotate(${(s*-90).toFixed(0)})`);
+    const step=p<.5?0:p<.9?1:2;
+    if(step!==lastStep){lastStep=step;steps.forEach((el,i)=>el.classList.toggle("on",i===step))}
+    bars[0].style.setProperty("--f",cl((p-.06)/.42).toFixed(3));
+    bars[1].style.setProperty("--f",cl((p-.5)/.4).toFixed(3));
+    bars[2].style.setProperty("--f",cl((p-.9)/.06).toFixed(3));
+  }
+  if(calm){draw(1);return}
+  document.documentElement.classList.add("anim");
+  let on=false,queued=false;
+  const pin=$(".scene-in",scene);
+  const update=()=>{queued=false;const r=scene.getBoundingClientRect();draw(cl((68-r.top)/(r.height-pin.offsetHeight)))};
+  const ask=()=>{if(on&&!queued){queued=true;requestAnimationFrame(update)}};
+  new IntersectionObserver(es=>{on=es[0].isIntersecting;ask()}).observe(scene);
+  addEventListener("scroll",ask,{passive:true});
+  addEventListener("resize",ask);
+  draw(0);
+})();
 </script>
 </body>
 </html>
