@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/in-1.webp" media="(min-width: 701px)">
+<link rel="preload" as="image" href="img/hero-d.webp" imagesrcset="img/in-1.webp 1200w, img/hero-d.webp 1920w" imagesizes="100vw" media="(min-width: 701px)">
 <link rel="preload" as="image" href="img/hero-m.webp" media="(max-width: 700px)">
 <script>document.documentElement.classList.add("js")</script>
 <script type="application/ld+json">
@@ -72,7 +72,7 @@ nav a:hover,nav a.on{color:var(--tx)}
 /* hero */
 .hero{min-height:100svh;display:flex;align-items:flex-end;padding:130px 0 64px;position:relative;isolation:isolate;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 30%}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(13,13,14,.45) 0%,rgba(13,13,14,.6) 40%,rgba(13,13,14,.97) 92%),linear-gradient(90deg,rgba(13,13,14,.7),transparent 70%)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(13,13,14,.3) 0%,rgba(13,13,14,.5) 40%,rgba(13,13,14,.97) 92%),linear-gradient(90deg,rgba(13,13,14,.7),transparent 70%)}
 .badge{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 10px;border-radius:999px;background:rgba(20,20,22,.7);border:1px solid var(--line);font-size:14px;font-weight:700;margin-bottom:22px;backdrop-filter:blur(6px)}
 .stars{color:#ffc53d;letter-spacing:2px}
 .hero h1{font:900 clamp(40px,8.6vw,112px)/1 var(--hd);text-transform:uppercase;margin-bottom:22px}
@@ -227,7 +227,8 @@ footer.site{border-top:1px solid var(--line);padding:48px 0 40px;color:var(--mut
 /* сцена «стрижка при прокрутке» */
 .scene-in{display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:40px}
 .steps{position:relative}
-.step{margin-bottom:22px}
+.step{margin-bottom:22px;display:grid;grid-template-columns:72px 1fr;gap:18px;align-items:start}
+.lt{width:72px;height:72px;border-radius:18px;background:var(--card);border:1px solid var(--line);overflow:hidden}
 .step b{font:900 15px var(--hd);color:var(--ac);display:block;margin-bottom:6px}
 .step h3{font:900 clamp(22px,3vw,30px)/1.1 var(--hd);text-transform:uppercase;margin-bottom:8px}
 .step p{color:var(--mut);max-width:40ch}
@@ -238,9 +239,18 @@ footer.site{border-top:1px solid var(--line);padding:48px 0 40px;color:var(--mut
 .art{display:flex;align-items:center;justify-content:center;min-height:0;height:100%}
 .art svg{width:100%;height:100%;max-height:600px;overflow:visible}
 .art .mess path{transform-box:fill-box;transform-origin:center}
-.anim .scene{height:340vh;padding:0}
-.anim .scene-in{position:sticky;top:68px;height:calc(100svh - 68px);padding:24px 0}
-.anim .steps{min-height:170px}
+.anim .steps{min-height:180px}
+
+/* 3D-модель Spline */
+.look{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
+.v3d{position:relative;aspect-ratio:1;max-height:620px;width:100%;border-radius:24px;overflow:hidden;background:radial-gradient(circle at 50% 45%,#2a1a10,var(--bg) 70%);border:1px solid var(--line)}
+.v3d spline-viewer{position:absolute;inset:0;width:100%;height:100%}
+.v3d .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s}
+.v3d.ready .poster{opacity:0;pointer-events:none}
+.v3d .go{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:2}
+.v3d.ready .go,.v3d.loading .go{display:none}
+.v3d .hint{position:absolute;left:16px;top:14px;z-index:2;font-size:13px;color:var(--mut);background:rgba(13,13,14,.6);padding:6px 12px;border-radius:999px;opacity:0;transition:opacity .4s}
+.v3d.ready .hint{opacity:1}
 .anim .step{position:absolute;inset:0 0 auto;margin:0;opacity:0;transform:translateY(16px);transition:opacity .4s,transform .4s;pointer-events:none}
 .anim .step.on{opacity:1;transform:none;pointer-events:auto}
 .anim .prog{display:flex}
@@ -284,12 +294,12 @@ footer.site{border-top:1px solid var(--line);padding:48px 0 40px;color:var(--mut
  .totop{display:none}
  .score b{font-size:48px}
  .ticker{padding:14px 0}
+ .look{grid-template-columns:1fr;gap:24px}
  .scene-in{grid-template-columns:1fr;gap:8px}
- .anim .scene{height:300vh}
- .anim .scene-in{height:calc(100svh - 68px - 70px);grid-template-rows:auto 1fr;padding:16px 0 4px}
- .anim .scene h2{font-size:24px;margin-bottom:10px}
- .anim .scene .eyebrow{margin-bottom:6px}
- .anim .steps{min-height:92px}
+ .step{grid-template-columns:52px 1fr;gap:14px}
+ .lt{width:52px;height:52px;border-radius:14px}
+ .art svg{max-height:min(440px,58svh)}
+ .anim .steps{min-height:100px}
  .anim .step h3{font-size:20px;margin-bottom:4px}
  .anim .step p{font-size:14px;line-height:1.45}
  .anim .step .btn{display:none}
@@ -311,7 +321,7 @@ footer.site{border-top:1px solid var(--line);padding:48px 0 40px;color:var(--mut
 
 <main id="top">
 <section class="hero" id="hero">
- <picture><source media="(max-width:700px)" srcset="img/hero-m.webp"><img class="hero-bg" src="img/in-1.webp" alt="" fetchpriority="high"></picture>
+ <picture><source media="(max-width:700px)" srcset="img/hero-m.webp"><img class="hero-bg" src="img/hero-d.webp" srcset="img/in-1.webp 1200w, img/hero-d.webp 1920w" sizes="100vw" alt="" fetchpriority="high"></picture>
  <div class="wrap">
   <a class="badge fx" data-reviews target="_blank" rel="noopener" href="#"><span class="stars">★★★★★</span> 5.0 · 533 отзыва на Яндекс Картах</a>
   <h1><span class="ln"><span>Стрижка,</span></span><br><span class="ln"><span>борода,</span></span> <span class="ln"><span><em>стиль</em></span></span></h1>
@@ -341,9 +351,9 @@ footer.site{border-top:1px solid var(--line);padding:48px 0 40px;color:var(--mut
  <div>
   <p class="eyebrow">Как это работает</p><h2>От хаоса — к стилю</h2>
   <div class="steps">
-   <div class="step on"><b>01</b><h3>Стрижка</h3><p>Убираем лишнее и задаём форму под ваш тип волос и черты лица.</p></div>
-   <div class="step"><b>02</b><h3>Борода</h3><p>Ровная длина, симметрия и чёткие контуры — без «ступенек».</p></div>
-   <div class="step"><b>03</b><h3>Готово</h3><p>Свежий образ, который легко повторить дома.</p><a class="btn" data-book target="_blank" rel="noopener" href="#">Записаться</a></div>
+   <div class="step on"><div class="lt" data-lottie="lottie/scissors.json"></div><div><b>01</b><h3>Стрижка</h3><p>Убираем лишнее и задаём форму под ваш тип волос и черты лица.</p></div></div>
+   <div class="step"><div class="lt" data-lottie="lottie/razor.json"></div><div><b>02</b><h3>Борода</h3><p>Ровная длина, симметрия и чёткие контуры — без «ступенек».</p></div></div>
+   <div class="step"><div class="lt" data-lottie="lottie/pole.json"></div><div><b>03</b><h3>Готово</h3><p>Свежий образ, который легко повторить дома.</p><a class="btn" data-book target="_blank" rel="noopener" href="#">Записаться</a></div></div>
   </div>
   <div class="prog" aria-hidden="true"><i></i><i></i><i></i></div>
  </div>
@@ -379,6 +389,19 @@ footer.site{border-top:1px solid var(--line);padding:48px 0 40px;color:var(--mut
    </g>
    <g id="shine" fill="#fff"><path id="st1" d="M0-12 3-3 12 0 3 3 0 12-3 3-12 0-3-3z" transform="scale(0)"/><path id="st2" d="M0-12 3-3 12 0 3 3 0 12-3 3-12 0-3-3z" transform="scale(0)"/></g>
   </svg>
+ </div>
+</div></section>
+
+<section id="look" class="alt" hidden><div class="wrap look">
+ <div>
+  <p class="eyebrow">3D</p><h2>Ваш новый образ</h2>
+  <p class="lead">Стрижка с плавным фейдом и аккуратная борода с чёткими линиями — так выглядит результат после визита в JOJO. Подвигайте курсором: модель следит за вами.</p>
+  <div class="cta"><a class="btn" data-book target="_blank" rel="noopener" href="#">Хочу так же</a><a class="btn ghost" href="#services">Услуги и цены</a></div>
+ </div>
+ <div class="v3d" id="v3d">
+  <img class="poster" src="img/look3d.webp" alt="3D-модель: мужчина со стрижкой фейд и оформленной бородой" loading="lazy" decoding="async">
+  <span class="hint">Двигайте курсором</span>
+  <button class="btn go" type="button">Открыть 3D</button>
  </div>
 </div></section>
 
@@ -481,6 +504,7 @@ const SITE = {
   routeUrl: "https://yandex.ru/maps?mode=routes&rtext=~55.697348%2C37.85159&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D20964906501",
   reviewsUrl: "https://yandex.ru/maps/org/20964906501/reviews/",
   mapWidget: "https://yandex.ru/map-widget/v1/?ll=37.85159%2C55.697348&z=16&pt=37.85159%2C55.697348%2Cpm2orl",
+  splineScene: "https://prod.spline.design/9qDfh73PstvBU6aY/scene.splinecode", // ссылка на сцену Spline (…/scene.splinecode); пусто — блок 3D скрыт
   legal: "ИП Ермолова Руслана Павловна · ОГРНИП 323508100430754 · ИНН 502743216409"
 };
 /* fit:"contain" — показать картинку целиком (для баннеров с текстом) */
@@ -678,7 +702,7 @@ if(!calm)$$("[data-count]").forEach(el=>cio.observe(el));
     const x=cx+rx*Math.cos(rad(a)),y=cy-ry*Math.sin(rad(a)),r=Math.atan2(cy-y,cx-x)*180/Math.PI;
     el.setAttribute("transform",`translate(${(x+jit).toFixed(1)} ${y.toFixed(1)}) rotate(${r.toFixed(1)})`);
   }
-  let lastStep=-1;
+  let lastStep=-1, onStep=()=>{};
   function draw(p){
     for(const t of tufts){
       const k=cl((p-t.cut)/.14);
@@ -697,21 +721,58 @@ if(!calm)$$("[data-count]").forEach(el=>cio.observe(el));
     st1.setAttribute("transform",`translate(266 118) scale(${(s*1.3).toFixed(2)}) rotate(${(s*90).toFixed(0)})`);
     st2.setAttribute("transform",`translate(134 312) scale(${(s*.9).toFixed(2)}) rotate(${(s*-90).toFixed(0)})`);
     const step=p<.5?0:p<.9?1:2;
-    if(step!==lastStep){lastStep=step;steps.forEach((el,i)=>el.classList.toggle("on",i===step))}
+    if(step!==lastStep){lastStep=step;steps.forEach((el,i)=>el.classList.toggle("on",i===step));onStep(step)}
     bars[0].style.setProperty("--f",cl((p-.06)/.42).toFixed(3));
     bars[1].style.setProperty("--f",cl((p-.5)/.4).toFixed(3));
     bars[2].style.setProperty("--f",cl((p-.9)/.06).toFixed(3));
   }
+  // анимированные иконки Lottie у шагов: плеер грузится, только когда сцена рядом
+  const icons=[];
+  onStep=s=>icons.forEach((a,i)=>{if(!a)return;if(i===s)a.goToAndPlay(0,true);else a.goToAndStop(0,true)});
+  new IntersectionObserver((es,o)=>{if(!es[0].isIntersecting)return;o.disconnect();
+    const js=document.createElement("script");js.src="js/lottie_light.min.js";
+    js.onload=()=>$$(".lt",scene).forEach((el,i)=>{icons[i]=lottie.loadAnimation({container:el,renderer:"svg",loop:true,autoplay:!calm&&i===lastStep,path:el.dataset.lottie,rendererSettings:{preserveAspectRatio:"xMidYMid meet"}})});
+    document.head.append(js)},{rootMargin:"300px"}).observe(scene);
+
   if(calm){draw(1);return}
   document.documentElement.classList.add("anim");
-  let on=false,queued=false;
-  const pin=$(".scene-in",scene);
-  const update=()=>{queued=false;const r=scene.getBoundingClientRect();draw(cl((68-r.top)/(r.height-pin.offsetHeight)))};
-  const ask=()=>{if(on&&!queued){queued=true;requestAnimationFrame(update)}};
-  new IntersectionObserver(es=>{on=es[0].isIntersecting;ask()}).observe(scene);
-  addEventListener("scroll",ask,{passive:true});
-  addEventListener("resize",ask);
+  // сцена проигрывается сама, пока видна на экране: стрижка → пауза → «отрастает» обратно → снова
+  const PLAY=7000, HOLD=2600, BACK=1400;
+  let p=0, phase="play", hold=0, raf=0, last=0;
+  function tick(now){
+    const dt=Math.min(64,now-(last||now)); last=now;
+    if(phase==="play"){p=Math.min(1,p+dt/PLAY);if(p===1){phase="hold";hold=0}}
+    else if(phase==="hold"){hold+=dt;if(hold>=HOLD)phase="back"}
+    else{p=Math.max(0,p-dt/BACK);if(p===0)phase="play"}
+    draw(p); raf=requestAnimationFrame(tick);
+  }
+  new IntersectionObserver(es=>{const e=es[0];
+    if(e.isIntersecting&&!raf){last=0;raf=requestAnimationFrame(tick)}
+    else if(!e.isIntersecting&&raf){cancelAnimationFrame(raf);raf=0}
+  },{threshold:.35}).observe(svg);
   draw(0);
+})();
+
+/* 3D-модель Spline: на компьютере грузится сама, на телефоне — по кнопке (экономим трафик) */
+(()=>{
+  if(!SITE.splineScene)return;
+  const sec=$("#look"),box=$("#v3d"); sec.hidden=false;
+  let started=false;
+  function load(){
+    if(started)return; started=true; box.classList.add("loading");
+    const s=document.createElement("script"); s.type="module";
+    s.src="https://unpkg.com/@splinetool/viewer@2.0.111/build/spline-viewer.js";
+    document.head.append(s);
+    const v=document.createElement("spline-viewer");
+    v.setAttribute("url",SITE.splineScene); v.setAttribute("loading-anim-type","none");
+    const done=()=>box.classList.add("ready");
+    v.addEventListener("load-complete",done); setTimeout(done,9000);
+    box.prepend(v);
+  }
+  $(".go",box).addEventListener("click",load);
+  new IntersectionObserver((es,o)=>{
+    if(es[0].isIntersecting&&matchMedia("(min-width:1001px) and (pointer:fine)").matches){o.disconnect();load()}
+  },{rootMargin:"300px"}).observe(box);
 })();
 </script>
 </body>
